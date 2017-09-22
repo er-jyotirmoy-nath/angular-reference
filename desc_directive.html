@@ -1,0 +1,49 @@
+<style>
+  .auditcorrectiveaction
+  {
+          
+        display: block;
+    /* border-style: groove; */
+    /* border-left: 15px; */
+    /* border-radius: 5px; */
+    margin-top: 15px;
+    padding: 8px;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-left-color: #005fc2;
+    border-radius: 3px;
+  }
+</style>
+
+<div ng-repeat="DescItem in item.caListDescItems">
+        <div ng-class="{auditcorrectiveaction: (DescItem.key == 'CORRACTION.QUESTION' || DescItem.key == 'CORRACTION.ANSWER' || DescItem.key == 'CORRACTION.NOTES' || DescItem.key == 'CORRACTION.ADDL_NOTES' || DescItem.key == 'CORRACTION.REVIEWER_COMMENTS' || DescItem.key == 'CORRACTION.REVIEWER') && DescItem.value!=NULL && DescItem.value!=''}"
+         ng-show="DescItem.key == 'CORRACTION.QUESTION' || DescItem.key == 'CORRACTION.ANSWER' || DescItem.key == 'CORRACTION.NOTES' || DescItem.key == 'CORRACTION.ADDL_NOTES' || DescItem.key == 'CORRACTION.REVIEWER_COMMENTS' || DescItem.key == 'CORRACTION.REVIEWER'">
+          <p class="marginBottomZero" >
+          <b ng-show="DescItem.value!=NULL && DescItem.value!=''">
+            <label translate translate-attr-aria-label="DescItem.key" >Question:</label>:
+          </b>
+         <span ng-show="DescItem.value!=NULL && DescItem.value!='' "> {{DescItem.value}} </span>
+        </p>
+        </div>
+        
+        <div ng-class="{auditcorrectiveaction: DescItem.key == 'CORRACTION.TRIGGER_QUESTION' && DescItem.value!=NULL && DescItem.value!=''}" ng-show="DescItem.key == 'CORRACTION.TRIGGER_QUESTION'" style="margin-left:30px; ">
+<p class="marginBottomZero" >
+          <b ng-show="DescItem.value!=NULL && DescItem.value!=''">
+            <label translate translate-attr-aria-label="DescItem.key" >Question:</label>:
+          </b>
+         <span ng-show="DescItem.value!=NULL && DescItem.value!='' "> {{DescItem.value}} </span>
+        </p>
+        </div>
+        
+        <div ng-class="{auditcorrectiveaction: DescItem.key == 'CORRACTION.TQ_NOTE_TEXT' && DescItem.value!=NULL && DescItem.value!=''}" ng-show="DescItem.key == 'CORRACTION.TQ_NOTE_TEXT'" style="margin-left:60px;">
+        <p class="marginBottomZero" >
+          <b ng-show="DescItem.value!=NULL && DescItem.value!=''">
+            <label translate translate-attr-aria-label="DescItem.key" >Question:</label>:
+          </b>
+         <span ng-show="DescItem.value!=NULL && DescItem.value!='' "> {{DescItem.value}} </span>
+        </p></div>
+
+        
+
+
+      </div>
